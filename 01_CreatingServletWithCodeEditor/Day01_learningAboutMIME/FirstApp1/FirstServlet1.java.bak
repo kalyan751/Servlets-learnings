@@ -1,0 +1,43 @@
+import javax.servlet.*;
+import java.io.*;
+public class FirstServlet1 implements Servlet {
+	
+	static{
+		System.out.println("Servlet loading");
+	}
+
+	public FirstServlet1(){
+		System.out.println("Servlet instantiation ****");
+	}
+
+	public void init(ServletConfig config){
+		System.out.println("Servlet initialization");
+	}
+	public void service(ServletRequest request, ServletResponse response) throws IOException{
+		System.out.println("Request processing");
+
+		//Setting the response MIME type
+		response.setContentType("text/MIME");
+
+		//from the response object I will get the writer object
+		PrintWriter out = response.getWriter();
+		out.println("<html><head><title>Output</title></head></html>");
+		out.println("<body>");
+		out.println("<h1>welcome to the world of JAVA</h1>");
+		out.println("</body>");
+		out.println("</html>");
+		out.flush();
+		
+	}
+
+	public ServletConfig getServletConfig(){
+		return null;
+	}
+	public String getServletInfo(){
+		return "Developed by kalyan";
+	}
+	public void destroy(){
+		System.out.println("Servlet de-instantiation");
+	}
+	
+}
