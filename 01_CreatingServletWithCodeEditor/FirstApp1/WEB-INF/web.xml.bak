@@ -2,7 +2,6 @@
   <servlet>
     <servlet-name>DemoServlet</servlet-name>
     <servlet-class>FirstServlet1</servlet-class>
-	<load-on-startup>10</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>DemoServlet</servlet-name>
